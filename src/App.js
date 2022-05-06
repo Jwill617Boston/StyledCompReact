@@ -61,6 +61,7 @@ function App() {
                </Menu>
             </Left>
             <Button>JOIN NOW</Button>
+            <Button>JOIN NOW</Button>
          </Wrapper>
       </Container>
    );
