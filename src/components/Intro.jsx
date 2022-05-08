@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Woman from "../img/woman.png";
 
 const Container = styled.div`
    height: calc(100vh - 50px);
@@ -36,6 +37,7 @@ const Info = styled.div`
 
 const Button = styled.button`
    padding: 15px;
+   margin-right: 5px;
    background-color: darkblue;
    color: white;
    border-radius: 10px;
@@ -86,7 +88,9 @@ const Intro = () => {
                </Contact>
             </Info>
          </Left>
-         <Right></Right>
+         <Right>
+            <Image src={Woman} />
+         </Right>
       </Container>
    );
 };
