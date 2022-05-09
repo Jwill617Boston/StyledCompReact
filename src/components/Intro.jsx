@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Woman from "../img/woman.png";
+import Woman from "../img/woman2.png";
 
 const Container = styled.div`
    height: calc(100vh - 50px);
@@ -37,7 +37,6 @@ const Info = styled.div`
 
 const Button = styled.button`
    padding: 15px;
-   margin-right: 5px;
    background-color: darkblue;
    color: white;
    border-radius: 10px;
@@ -71,6 +70,10 @@ const Image = styled.img`
 `;
 
 const Intro = () => {
+   const clickHander = () => {
+      console.log("Clicked");
+   };
+
    return (
       <Container>
          <Left>
@@ -81,7 +84,7 @@ const Intro = () => {
                impact on their business.
             </Desc>
             <Info>
-               <Button>START A PROJECT</Button>
+               <Button onClick={clickHander}>START A PROJECT</Button>
                <Contact>
                   <Phone>Call Us (012) 345 - 6789</Phone>
                   <ContactText>For any question or concern</ContactText>
