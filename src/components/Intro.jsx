@@ -74,7 +74,7 @@ const Intro = () => {
 
     
    const clickHander = () => {
-      console.log("Clicked");
+      console.log("Intro Button Clicked");
    };
 
    return (
