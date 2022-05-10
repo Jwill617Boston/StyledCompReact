@@ -78,7 +78,7 @@ const Intro = () => {
    return (
       <Container>
          <Left>
-            <Title>Adventures in creative age</Title>
+            <Title>Adventures in creative age </Title>
             <Desc>
                We believe that designing products and services in close
                partnership with our clients is the only way to have a real
