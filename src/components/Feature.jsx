@@ -12,7 +12,9 @@ const Left = styled.div`
    width: 50%;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+   width: 80%;
+`;
 
 const Right = styled.div`
    width: 50%;
@@ -27,10 +29,12 @@ const SubTitle = styled.span`
    font-size: 24px;
    font-style: italic;
    color: #333;
+   margin-top: 30px;
 `;
 const Desc = styled.p`
    font-size: 20px;
    color: #777;
+   margin-top: 30px;
 `;
 const Button = styled.button`
    width: 150px;
