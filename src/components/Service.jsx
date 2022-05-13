@@ -38,7 +38,9 @@ const Right = styled.div`
 const Wrapper = styled.div`
    padding: 50px;
    display: flex;
+   margin-top: 100px;
    flex-direction: column;
+   align-items: center;
 `;
 const Title = styled.h1``;
 
