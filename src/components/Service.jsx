@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Woman from "../img/woman2.png";
 import MiniCard from "./MiniCard";
@@ -11,11 +11,24 @@ const Container = styled.div`
 
 const Left = styled.div`
    width: 50%;
+   position: relative;
 `;
 
 const Image = styled.img`
    height: 100%;
    margin-left: 100px;
+   display: ${(props) => props.open && "none"};
+`;
+
+const Video = styled.video`
+   display: ${(props) => !props.open && "none"};
+   height: 300px;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   margin: auto;
+   margin-right: 70px;
 `;
 
 const Right = styled.div`
@@ -61,11 +74,19 @@ const Icon = styled.img`
 `;
 
 const Service = () => {
+   const [open, setOpen] = useState(false);
    return (
       <>
          <Container>
             <Left>
-               <Image src={Woman} />
+               <Image open={open} src={Woman} />
+               <Video
+                  open={open}
+                  autoPlay
+                  loop
+                  controls
+                  src="https://player.vimeo.com/external/449759244.sd.mp4?s=d5f3da46ddc17aa69a7de84f1e420610ebd2a391&profile_id=139&oauth2_token_id=57447761"
+               />
             </Left>
             <Right>
                <Wrapper>
@@ -83,7 +104,7 @@ const Service = () => {
                      <MiniCard />
                      <MiniCard />
                   </CardContainer>
-                  <Button>
+                  <Button onClick={() => setOpen(!open)}>
                      <Icon src={Play} />
                      How it works
                   </Button>
