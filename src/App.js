@@ -7,6 +7,10 @@ import Navbar from "./components/Nabar";
 import Price from "./components/Price";
 import Service from "./components/Service";
 
+import LocomotiveScroll from "locomotive-scroll";
+
+
+
 const Container = styled.div`
    height: 100vh;
    overflow: hidden;
