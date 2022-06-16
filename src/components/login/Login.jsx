@@ -63,11 +63,15 @@ const Login = () => {
    };
 
    const Container = styled.div`
+      width: 100%;
+      max-width: 420px;
+      min-height: calc(100vh - 90px);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 80px);
-      background-color: grey;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
    `;
 
    const Wrapper = styled.div`
@@ -78,10 +82,10 @@ const Login = () => {
 
    const FormWrapper = styled.div`
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
       flex-direction: column;
+      justify-content: space-evenly;
+      flex-grow: 1;
+      padding-bottom: 1rem;
    `;
 
    return (
