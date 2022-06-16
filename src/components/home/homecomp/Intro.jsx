@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Woman from "../img/woman2.png";
+import Woman from "../../../img/woman2.png";
 import AnimatedShapes from "./AnimatedShapes";
 
 const Container = styled.div`
@@ -71,8 +71,6 @@ const Image = styled.img`
 `;
 
 const Intro = () => {
-
-    
    const clickHander = () => {
       console.log("Intro Button Clicked");
    };

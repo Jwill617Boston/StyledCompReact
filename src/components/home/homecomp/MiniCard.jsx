@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Search from "../img/search.png";
-
-
+import Search from "../../../img/search.png";
 
 const Container = styled.div`
    display: flex;

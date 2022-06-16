@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Woman from "../img/woman2.png";
+import Woman from "../../../img/woman2.png";
 import MiniCard from "./MiniCard";
-import Play from "../img/play.png";
+import Play from "../../../img/play.png";
 
 const Container = styled.div`
    display: flex;

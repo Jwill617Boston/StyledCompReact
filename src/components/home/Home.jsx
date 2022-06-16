@@ -10,12 +10,12 @@ import {
    PriceShape,
 } from "./Home.style.js";
 
-import Intro from "../../components/Intro";
-import Feature from "../../components/Feature";
-import Service from "../../components/Service";
-import Price from "../../components/Price";
-import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
+import Intro from "../../components/home/homecomp/Intro";
+import Feature from "../../components/home/homecomp/Feature";
+import Service from "../../components/home/homecomp/Service";
+import Price from "../../components/home/homecomp/Price";
+import Contact from "../../components/home/homecomp/Contact";
+import Footer from "../../components/home/homecomp/Footer";
 
 const Home = () => {
    return (
