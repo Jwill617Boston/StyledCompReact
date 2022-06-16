@@ -4,7 +4,7 @@ import Woman from "../img/woman2.png";
 import AnimatedShapes from "./AnimatedShapes";
 
 const Container = styled.div`
-   height: calc(100vh - 50px);
+   height: calc(100vh - 80px);
    display: flex;
    padding: 20px;
 `;

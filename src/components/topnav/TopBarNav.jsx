@@ -7,7 +7,7 @@ import {
    NavbarInnerContainer,
    NavbarLinkContainer,
    NavbarLink,
-   Logo,
+   NavBarLoginButton,
    OpenLinksButton,
    NavbarLinkExtended,
 } from "./TopBarNav.style.js";
@@ -21,10 +21,10 @@ function TopBarNav() {
             <NavbarInnerContainer>
                <LeftContainer>
                   <NavbarLinkContainer>
-                     <NavbarLink to="#"> Home</NavbarLink>
+                     <NavbarLink to="/"> Home</NavbarLink>
                      <NavbarLink to="#"> Products</NavbarLink>
-                     <NavbarLink to="#"> Contact Us</NavbarLink>
-                     <NavbarLink to="#"> About Us</NavbarLink>
+                     <NavbarLink to="/register"> Register</NavbarLink>
+
                      <OpenLinksButton
                         onClick={() => {
                            setExtendNavbar((curr) => !curr);
@@ -35,15 +35,49 @@ function TopBarNav() {
                   </NavbarLinkContainer>
                </LeftContainer>
                <RightContainer>
-                  <Logo></Logo>
+                  <NavBarLoginButton>
+                     <NavbarLink to="/Login"> Login</NavbarLink>
+                  </NavBarLoginButton>
                </RightContainer>
             </NavbarInnerContainer>
             {extendNavbar && (
                <NavbarExtendedContainer>
-                  <NavbarLinkExtended to="#"> Home</NavbarLinkExtended>
-                  <NavbarLinkExtended to="#"> Products</NavbarLinkExtended>
-                  <NavbarLinkExtended to="#"> Contact Us</NavbarLinkExtended>
-                  <NavbarLinkExtended to="#"> About Us</NavbarLinkExtended>
+                  <NavbarLinkExtended
+                     onClick={() => {
+                        setExtendNavbar((curr) => !curr);
+                     }}
+                     to="/"
+                  >
+                     {" "}
+                     Home
+                  </NavbarLinkExtended>
+                  <NavbarLinkExtended
+                     onClick={() => {
+                        setExtendNavbar((curr) => !curr);
+                     }}
+                     to="#"
+                  >
+                     {" "}
+                     Products
+                  </NavbarLinkExtended>
+                  <NavbarLinkExtended
+                     onClick={() => {
+                        setExtendNavbar((curr) => !curr);
+                     }}
+                     to="/register"
+                  >
+                     {" "}
+                     Register
+                  </NavbarLinkExtended>
+                  <NavbarLinkExtended
+                     onClick={() => {
+                        setExtendNavbar((curr) => !curr);
+                     }}
+                     to="/Login"
+                  >
+                     {" "}
+                     Login
+                  </NavbarLinkExtended>
                </NavbarExtendedContainer>
             )}
          </NavbarContainer>
