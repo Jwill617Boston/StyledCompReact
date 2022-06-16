@@ -3,9 +3,11 @@ import styled from "styled-components";
 
 const Container = styled.div`
    display: flex;
-   height: 100vh;
+   height: calc(100vh - 80px);
    justify-content: center;
    align-items: center;
+   padding: 10px;
+   overflow: hidden;
 `;
 
 const UserPage = () => {
