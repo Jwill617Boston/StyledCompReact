@@ -21,7 +21,7 @@ function TopBarNav() {
             <NavbarInnerContainer>
                <LeftContainer>
                   <NavbarLinkContainer>
-                     <NavbarLink to="/"> Home</NavbarLink>
+                     <NavbarLink to="/home"> Home</NavbarLink>
                      <NavbarLink to="#"> Products</NavbarLink>
                      <NavbarLink to="/register"> Register</NavbarLink>
                      <NavbarLink to="/userpage"> User Page</NavbarLink>

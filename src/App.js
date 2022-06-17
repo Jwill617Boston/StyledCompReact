@@ -4,6 +4,7 @@ import Login from "./components/login/Login";
 import Register from "./components/regester/Regester";
 import UserPage from "./components/userpage/UserPage";
 import Layout from "./components/layout/Layout";
+import ErrorPage from "./components/errorpage/ErrorPage";
 
 const ROLES = {
    User: 2001,
@@ -23,6 +24,7 @@ const App = () => {
                {/* user routes */}
                <Route path="userpage" element={<UserPage />} />
             </Route>
+            <Route path="*" element={<ErrorPage />} />
          </Routes>
       </>
    );
