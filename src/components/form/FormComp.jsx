@@ -90,7 +90,6 @@ const FormComp = () => {
       await onAuthStateChanged(fireauth, (user) => {
          if (user) {
             const uid = user.uid;
-            console.log(uid);
             const userAuthData = {
                uid,
                firstName: userData.firstName,
@@ -98,7 +97,6 @@ const FormComp = () => {
             };
 
             setAuth(userAuthData);
-            console.log("auth", auth);
             toast(`User has uploaded`, {
                position: "top-right",
                autoClose: 5000,

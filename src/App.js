@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 import Home from "./components/home/Home";
 import Login from "./components/login/Login";
@@ -10,6 +11,8 @@ import RequireAuth from "./components/layout/RequiredAuth";
 
 import useAuth from "./utilities/useAuth";
 
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 const ROLES = {
    User: 2001,
    Editor: 1984,
@@ -17,7 +20,29 @@ const ROLES = {
 };
 
 const App = () => {
-   const { auth } = useAuth();
+   const fireauth = getAuth();
+   const { auth, setAuth } = useAuth();
+
+   useEffect(() => {
+      async function getUserState() {
+         await onAuthStateChanged(fireauth, (user) => {
+            if (user) {
+               const uid = user.uid;
+               const userAuthData = {
+                  uid,
+               };
+
+               setAuth(userAuthData);
+
+               // ...
+            } else {
+               // User is signed out
+               // ...
+            }
+         });
+      }
+      getUserState();
+   }, []);
 
    console.log("app auth", auth);
    return (
