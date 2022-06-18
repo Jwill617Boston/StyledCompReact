@@ -116,9 +116,8 @@ const FormComp = () => {
          }
       });
 
-      const userFileName = auth.uid.toString();
 
-      const userCollectionRef = collection(db, userFileName);
+      const userCollectionRef = collection(db, `${auth.uid}`);
 
       await addDoc(userCollectionRef, {
          ...auth,
