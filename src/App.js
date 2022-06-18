@@ -8,6 +8,8 @@ import Layout from "./components/layout/Layout";
 import ErrorPage from "./components/errorpage/ErrorPage";
 import RequireAuth from "./components/layout/RequiredAuth";
 
+import useAuth from "./utilities/useAuth";
+
 const ROLES = {
    User: 2001,
    Editor: 1984,
@@ -15,6 +17,9 @@ const ROLES = {
 };
 
 const App = () => {
+   const { auth } = useAuth();
+
+   console.log("app auth", auth);
    return (
       <>
          <Routes>

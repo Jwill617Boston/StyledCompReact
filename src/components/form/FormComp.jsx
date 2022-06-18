@@ -65,11 +65,6 @@ const FormComp = () => {
 
    // FIREBASE REF
 
-   const navigate = useNavigate();
-   console.log("userData", userData);
-   console.log("auth", auth);
-   console.log("auth UID", auth.uid);
-
    // HANLDER
 
    const userSubmit = async () => {
