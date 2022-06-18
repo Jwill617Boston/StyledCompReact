@@ -28,16 +28,8 @@ const App = () => {
          await onAuthStateChanged(fireauth, (user) => {
             if (user) {
                const uid = user.uid;
-               const userAuthData = {
-                  uid,
-               };
-
-               setAuth(userAuthData);
-
-               // ...
+               setAuth({ ...auth, uid });
             } else {
-               // User is signed out
-               // ...
             }
          });
       }

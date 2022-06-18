@@ -12,7 +12,17 @@ import {
    NavbarLinkExtended,
 } from "./TopBarNav.style.js";
 
+import { Button } from "reactstrap";
+
+import useAuth from "../../utilities/useAuth";
+
+import { getAuth, signOut } from "firebase/auth";
+
 function TopBarNav() {
+   const fireAuth = getAuth();
+
+   const { auth } = useAuth();
+
    const [extendNavbar, setExtendNavbar] = useState(false);
 
    return (
@@ -36,9 +46,25 @@ function TopBarNav() {
                   </NavbarLinkContainer>
                </LeftContainer>
                <RightContainer>
-                  <NavBarLoginButton>
-                     <NavbarLink to="/Login"> Login</NavbarLink>
-                  </NavBarLoginButton>
+                  {!auth.uid ? (
+                     <NavBarLoginButton>
+                        <NavbarLink to="/Login"> Login</NavbarLink>
+                     </NavBarLoginButton>
+                  ) : (
+                     <NavBarLoginButton
+                        onClick={() => {
+                           signOut(fireAuth)
+                              .then(() => {
+                                 // Sign-out successful.
+                              })
+                              .catch((error) => {
+                                 // An error happened.
+                              });
+                        }}
+                     >
+                        Log Out
+                     </NavBarLoginButton>
+                  )}
                </RightContainer>
             </NavbarInnerContainer>
             {extendNavbar && (
