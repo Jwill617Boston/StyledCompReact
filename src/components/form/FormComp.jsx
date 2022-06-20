@@ -1,14 +1,5 @@
-import React, { useState, useEffect, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
-import {
-   Button,
-   Form,
-   FormGroup,
-   Label,
-   Input,
-   FormText,
-   Col,
-} from "reactstrap";
+import React, { useReducer } from "react";
+import { Button, Form, FormGroup, Label, Input, Col } from "reactstrap";
 
 import {
    getAuth,
@@ -26,6 +17,8 @@ import { toast } from "react-toastify";
 
 import { db } from "../../firebase/FirebaseAuth";
 
+import { useNavigate } from "react-router-dom";
+
 const Container = styled.div`
    display: flex;
    height: 100vh;
@@ -41,6 +34,8 @@ const user = {
 };
 
 const FormComp = () => {
+   const navigate = useNavigate();
+
    const fireauth = getAuth();
    const { auth, setAuth } = useAuth();
 
@@ -67,7 +62,9 @@ const FormComp = () => {
 
    // HANLDER
 
-   const userSubmit = async () => {
+   const userSubmit = async (e) => {
+      e.preventDefault();
+
       console.log("CLicked");
 
       await createUserWithEmailAndPassword(
@@ -114,13 +111,14 @@ const FormComp = () => {
          }
       });
 
-
       const userCollectionRef = collection(db, `${auth.uid}`);
 
       await addDoc(userCollectionRef, {
          ...auth,
          Timestamp: serverTimestamp(),
       });
+
+      navigate("/userpage", { replace: true });
    };
 
    return (

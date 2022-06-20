@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
    NavbarContainer,
    LeftContainer,
@@ -11,8 +12,6 @@ import {
    OpenLinksButton,
    NavbarLinkExtended,
 } from "./TopBarNav.style.js";
-
-import { Button } from "reactstrap";
 
 import useAuth from "../../utilities/useAuth";
 
@@ -48,7 +47,7 @@ function TopBarNav() {
                <RightContainer>
                   {!auth.uid ? (
                      <NavBarLoginButton>
-                        <NavbarLink to="/Login"> Login</NavbarLink>
+                        <NavbarLink to="/signup"> Sign Up</NavbarLink>
                      </NavBarLoginButton>
                   ) : (
                      <NavBarLoginButton
@@ -65,6 +64,9 @@ function TopBarNav() {
                         Log Out
                      </NavBarLoginButton>
                   )}
+                  <NavBarLoginButton>
+                     <NavbarLink to="/login"> Login</NavbarLink>
+                  </NavBarLoginButton>
                </RightContainer>
             </NavbarInnerContainer>
             {extendNavbar && (

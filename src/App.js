@@ -2,16 +2,17 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
 import Home from "./components/home/Home";
-import Login from "./components/login/Login";
 import Register from "./components/regester/Regester";
 import UserPage from "./components/userpage/UserPage";
-import Layout from "./components/layout/Layout";
+import Layout from "./layout/Layout";
 import ErrorPage from "./components/errorpage/ErrorPage";
-import RequireAuth from "./components/layout/RequiredAuth";
+import RequireAuth from "./layout/RequiredAuth";
+import SignUp from "./components/signup/SignUp";
 
 import useAuth from "./utilities/useAuth";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Login from "./components/login/Login";
 
 const ROLES = {
    User: 2001,
@@ -21,19 +22,12 @@ const ROLES = {
 
 const App = () => {
    const fireauth = getAuth();
+   const user = fireauth.currentUser;
+
    const { auth, setAuth } = useAuth();
 
    useEffect(() => {
-      async function getUserState() {
-         await onAuthStateChanged(fireauth, (user) => {
-            if (user) {
-               const uid = user.uid;
-               setAuth({ ...auth, uid });
-            } else {
-            }
-         });
-      }
-      getUserState();
+      setAuth({ ...auth, user });
    }, []);
 
    console.log("app auth", auth);
@@ -43,8 +37,8 @@ const App = () => {
             <Route path="/" element={<Layout />}>
                {/* public routes */}
                <Route path="home" element={<Home />} />
+               <Route path="signup" element={<SignUp />} />
                <Route path="login" element={<Login />} />
-               <Route path="register" element={<Register />} />
                <Route element={<RequireAuth />}>
                   {/* user routes */}
                   <Route path="userpage" element={<UserPage />} />
