@@ -2,7 +2,7 @@ import { useLocation, Navigate, Outlet } from "react-router-dom";
 import useAuth from "../utilities/useAuth";
 import { getAuth } from "firebase/auth";
 
-const RequireAuth = ({ allowedRoles }) => {
+const RequireAuth = () => {
    const { auth } = useAuth();
    const location = useLocation();
 
