@@ -4,14 +4,14 @@ import useAuth from "../hooks/useAuth";
 const RequireAuth = ({ allowedRoles }) => {
    const { auth } = useAuth();
    const location = useLocation();
+   const value = window.localStorage.getItem("uid");
 
-   return auth?.roles?.find((role) => allowedRoles?.includes(role)) ? (
+   return value || auth.uid ? (
       <Outlet />
-   ) : auth?.user ? (
-      <Navigate to="/unauthorized" state={{ from: location }} replace />
    ) : (
-      <Navigate to="/login" state={{ from: location }} replace />
+      <Navigate to="/home" state={{ from: location }} replace />
    );
+   
 };
 
 export default RequireAuth;

@@ -27,10 +27,17 @@ const App = () => {
    const { auth, setAuth } = useAuth();
 
    useEffect(() => {
-      setAuth({ ...auth, user });
-   }, []);
+      if (auth) {
+         window.localStorage.setItem("uid", auth.uid);
+         const value = window.localStorage.getItem("uid");
+         console.log("local", value);
+      } else {
+         setAuth({ ...auth, user });
+         console.log("user auth", auth);
+      }
+      console.log("auth", auth);
+   }, [auth]);
 
-   console.log("app auth", auth);
    return (
       <>
          <Routes>
@@ -44,7 +51,6 @@ const App = () => {
                   <Route path="userpage" element={<UserPage />} />
                </Route>
             </Route>
-
             <Route path="*" element={<ErrorPage />} />
          </Routes>
       </>

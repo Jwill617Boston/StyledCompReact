@@ -61,8 +61,10 @@ const Login = () => {
       )
          .then((userCredential) => {
             // Signed in
-            const user = userCredential.user;
-            console.log("Logged IN");
+            const userID = userCredential.user.uid;
+            setAuth({ uid: userID });
+            window.localStorage.setItem("uid", auth.uid);
+            console.log("Logged IN", auth);
 
             // ...
          })
