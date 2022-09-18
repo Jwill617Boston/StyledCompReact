@@ -12,6 +12,9 @@ const Container = styled.div`
 const Left = styled.div`
    width: 50%;
    position: relative;
+   @media (max-width: 800px) {
+      display: none;
+   }
 `;
 
 const Image = styled.img`
@@ -33,6 +36,9 @@ const Video = styled.video`
 
 const Right = styled.div`
    width: 50%;
+   @media (max-width: 800px) {
+      width: 90%;
+   }
 `;
 
 const Wrapper = styled.div`

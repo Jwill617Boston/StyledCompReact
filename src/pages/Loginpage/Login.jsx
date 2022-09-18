@@ -63,7 +63,6 @@ const Login = () => {
             // Signed in
             const userID = userCredential.user.uid;
             setAuth({ uid: userID });
-            window.localStorage.setItem("uid", auth.uid);
             console.log("Logged IN", auth);
 
             // ...

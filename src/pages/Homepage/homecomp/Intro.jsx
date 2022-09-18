@@ -15,17 +15,26 @@ const Left = styled.div`
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   @media (max-width: 800px) {
+      width: 100%;
+   }
 `;
 
 const Title = styled.h1`
    width: 60%;
    font-size: 60px;
+   @media (max-width: 800px) {
+      width: 80%;
+   }
 `;
 
 const Desc = styled.p`
    width: 60%;
    font-size: 20px;
    margin-top: 20px;
+   @media (max-width: 800px) {
+      width: 80%;
+   }
 `;
 
 const Info = styled.div`
@@ -34,6 +43,9 @@ const Info = styled.div`
    display: flex;
    align-items: center;
    justify-content: space-between;
+   @media (max-width: 800px) {
+      width: 80%;
+   }
 `;
 
 const Button = styled.button`
@@ -64,6 +76,9 @@ const ContactText = styled.span`
 
 const Right = styled.div`
    width: 40%;
+   @media (max-width: 800px) {
+      display: none;
+   }
 `;
 
 const Image = styled.img`

@@ -10,10 +10,16 @@ const Container = styled.div`
 
 const Left = styled.div`
    width: 50%;
+   @media (max-width: 800px) {
+      width: 12%;
+   }
 `;
 
 const Image = styled.img`
    width: 80%;
+   @media (max-width: 800px) {
+      display: none;
+   }
 `;
 
 const Right = styled.div`
@@ -21,6 +27,9 @@ const Right = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;
+   @media (max-width: 800px) {
+      width: 80%;
+   }
 `;
 const Title = styled.span`
    font-size: 70px;
