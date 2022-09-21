@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container } from "./home.styled";
+import { Container } from "./userpage.styled";
 
-const Home = () => {
+const UserPage = () => {
    return (
       <>
          <Container>
-            <h1>Home</h1>
+            <h1>UserPage</h1>
          </Container>
       </>
    );
 };
 
-export default Home;
+export default UserPage;

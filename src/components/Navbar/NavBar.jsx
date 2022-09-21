@@ -14,6 +14,13 @@ import {
    NavbarLinkExtended,
 } from "./navbar.styled";
 
+import Button from "@material-ui/core/Button";
+
+const Wrapper = styled.div`
+   margin-top: 25px;
+   height: 100%;
+`;
+
 const NavBar = () => {
    const [extendNavbar, setExtendNavbar] = useState(false);
 
@@ -23,10 +30,9 @@ const NavBar = () => {
             <NavbarInnerContainer>
                <LeftContainer>
                   <NavbarLinkContainer>
-                     <NavbarLink to="/"> Home</NavbarLink>
-                     <NavbarLink to="/"> Products</NavbarLink>
-                     <NavbarLink to="/"> Contact Us</NavbarLink>
-                     <NavbarLink to="/"> About Us</NavbarLink>
+                     <NavbarLink to="/">Home</NavbarLink>
+                     <NavbarLink to="/user"> User </NavbarLink>
+
                      <OpenLinksButton
                         onClick={() => {
                            setExtendNavbar((curr) => !curr);
@@ -38,12 +44,17 @@ const NavBar = () => {
                </LeftContainer>
                <RightContainer>
                   <Logo src=""></Logo>
+                  <Wrapper>
+                     <Button variant="contained" color="primary">
+                        Button
+                     </Button>
+                  </Wrapper>
                </RightContainer>
             </NavbarInnerContainer>
             {extendNavbar && (
                <NavbarExtendedContainer>
                   <NavbarLinkExtended to="/"> Home</NavbarLinkExtended>
-                  <NavbarLinkExtended to="/">Products</NavbarLinkExtended>
+                  <NavbarLinkExtended to="/user">User</NavbarLinkExtended>
                   <NavbarLinkExtended to="/">Contact Us</NavbarLinkExtended>
                   <NavbarLinkExtended to="/"> About Us</NavbarLinkExtended>
                </NavbarExtendedContainer>
