@@ -7,6 +7,7 @@ export const NavbarContainer = styled.nav`
    background-color: black;
    display: flex;
    flex-direction: column;
+   position: sticky;
    @media (min-width: 740px) {
       height: 80px;
    }
@@ -37,7 +38,29 @@ export const NavbarLinkContainer = styled.div`
    display: flex;
 `;
 
-export const NavbarLink = styled(Link)`
+export const NavbarLink2 = styled.a`
+   color: white;
+   font-size: x-large;
+   font-family: Arial, Helvetica, sans-serif;
+   text-decoration: none;
+   margin: 10px;
+   @media (max-width: 740px) {
+      display: none;
+   }
+`;
+
+export const NavbarLink = styled.a`
+   color: white;
+   font-size: x-large;
+   font-family: Arial, Helvetica, sans-serif;
+   text-decoration: none;
+   margin: 10px;
+   @media (max-width: 740px) {
+      display: none;
+   }
+`;
+
+export const NavbarScroll = styled.div`
    color: white;
    font-size: x-large;
    font-family: Arial, Helvetica, sans-serif;

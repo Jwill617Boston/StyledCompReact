@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import {
@@ -9,12 +9,16 @@ import {
    NavbarInnerContainer,
    NavbarLinkContainer,
    NavbarLink,
+   NavbarLink2,
    Logo,
    OpenLinksButton,
    NavbarLinkExtended,
+   NavbarScroll,
 } from "./navbar.styled";
 
 import Button from "@material-ui/core/Button";
+
+import { RefContext } from "../../utilities/RefProvider";
 
 const Wrapper = styled.div`
    margin-top: 25px;
@@ -22,6 +26,11 @@ const Wrapper = styled.div`
 `;
 
 const NavBar = () => {
+   const { pageOne, pageTwo, pageThree, pageFour, scrollToSection } =
+      useContext(RefContext);
+
+   console.log("Nav", pageOne);
+
    const [extendNavbar, setExtendNavbar] = useState(false);
 
    return (
@@ -31,7 +40,9 @@ const NavBar = () => {
                <LeftContainer>
                   <NavbarLinkContainer>
                      <NavbarLink to="/">Home</NavbarLink>
-                     <NavbarLink to="/user"> User </NavbarLink>
+                     <NavbarLink href="#feature">Feature</NavbarLink>
+                     <NavbarLink href="#page3"> Page 3 </NavbarLink>
+                     <NavbarLink href="#page4"> Page 4 </NavbarLink>
 
                      <OpenLinksButton
                         onClick={() => {
