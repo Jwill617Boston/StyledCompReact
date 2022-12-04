@@ -9,11 +9,9 @@ import {
    NavbarInnerContainer,
    NavbarLinkContainer,
    NavbarLink,
-   NavbarLink2,
    Logo,
    OpenLinksButton,
    NavbarLinkExtended,
-   NavbarScroll,
 } from "./navbar.styled";
 
 import Button from "@material-ui/core/Button";
@@ -40,7 +38,7 @@ const NavBar = () => {
                <LeftContainer>
                   <NavbarLinkContainer>
                      <NavbarLink to="/">Home</NavbarLink>
-                     <NavbarLink href="#feature">Feature</NavbarLink>
+                     <NavbarLink to="/user">User</NavbarLink>
                      <NavbarLink href="#page3"> Page 3 </NavbarLink>
                      <NavbarLink href="#page4"> Page 4 </NavbarLink>
 

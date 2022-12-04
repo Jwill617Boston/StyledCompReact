@@ -14,6 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "firebase": "^9.8.3",
+    "jshint": "^2.13.6",
     "locomotive-scroll": "^4.1.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -53,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
