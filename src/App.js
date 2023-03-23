@@ -1,10 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import NavBar from "./components/Navbar/NavBar";
+import "./app.css";
+import CompOne from "./components/CompOne";
 
 const App = () => {
    return (
       <>
-         <NavBar />
+         <div className="content1">
+            <CompOne />
+         </div>
+         <section>
+            <h1>Hello World</h1>
+         </section>
       </>
    );
 };
