@@ -1,25 +1,35 @@
 import "./app.css";
-import { useState, useEffect } from "react";
-import CompOne from "./components/CompOne";
+import { useState } from "react";
 import axios from "axios";
 
-const App = () => {
-   const [data, setData] = useState(["hello"]);
-   useEffect(() => {
-      axios.get("https://api.publicapis.org/entries").then((res) => {
-         setData(res.data.entries);
-      });
-   }, []);
+import { Wrapper, Item } from "./components";
 
-   console.log(data);
+const App = () => {
+   const [data, setData] = useState({});
+   const getData = () => {
+      axios.get("https://pokeapi.co/api/v2/pokemon/ditto").then((res) => {
+         console.log("Res", res.data);
+         setData(res.data);
+      });
+   };
+
+   console.log("Data", data);
 
    return (
       <>
-         <section>
-            <button>Get Data</button>
-            <h1>Data</h1>
-            <ul></ul>
-         </section>
+         <Wrapper>
+            <button onClick={getData}>
+               <h1>Ditto Stats</h1>
+            </button>
+            <Item>
+               <h1>Name</h1>
+               {data.name}
+            </Item>
+            <Item>
+               <h1>Weight</h1>
+               {data.weight}
+            </Item>
+         </Wrapper>
       </>
    );
 };
