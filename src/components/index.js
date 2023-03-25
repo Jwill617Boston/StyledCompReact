@@ -5,9 +5,8 @@ export const Wrapper = styled.section`
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   height: 90vh;
+   height: 100%;
    padding: 4em;
-   background: papayawhip;
 `;
 
 export const Item = styled.section`
@@ -15,5 +14,5 @@ export const Item = styled.section`
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   padding-top: 10px;
+   padding-top: 5px;
 `;
