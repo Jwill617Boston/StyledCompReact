@@ -1,4 +1,4 @@
-import { Wrapper } from "./sytled/Footer";
+import { Wrapper } from "../sytled/Footer";
 
 const FooterComp = () => {
    return (

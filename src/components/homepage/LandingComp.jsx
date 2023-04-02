@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Wrapper } from "./sytled/Landing";
+import { Wrapper } from "../sytled/Landing";
 
 const LandingComp = () => {
    return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavWrapper, Item } from "./sytled/Navbar";
+import { NavWrapper, Item } from "../sytled/Navbar";
 
 const NavbarComp = () => {
    return (
@@ -11,7 +11,7 @@ const NavbarComp = () => {
                   <Link to={`/`}>Home</Link>
                </Item>
                <Item>
-                  <Link to={`/page2`}>Page 2</Link>
+                  <Link to={`/practice_Page`}>Pratice Page</Link>
                </Item>
             </NavWrapper>
          </ul>

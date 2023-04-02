@@ -1,4 +1,4 @@
-import { Wrapper } from "./sytled/Section3";
+import { Wrapper } from "../sytled/Section3";
 
 const Section3Comp = () => {
    return (

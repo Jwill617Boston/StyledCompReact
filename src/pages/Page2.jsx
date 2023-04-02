@@ -1,10 +1,10 @@
 import React from "react";
-import Section1Comp_Page2 from "../components/page2/Section1Comp_Page2";
+import Section1CompPage2 from "../components/page2/Section1CompPage2";
 
 const Page2 = () => {
    return (
       <>
-         <Section1Comp_Page2 />
+         <Section1CompPage2 />
       </>
    );
 };
