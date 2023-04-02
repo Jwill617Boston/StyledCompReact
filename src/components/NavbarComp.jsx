@@ -1,16 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavWrapper, Item } from "./sytled/Navbar";
 
 const NavbarComp = () => {
    return (
       <nav>
          <ul>
-            <li>
-               <Link to={`/contacts/1`}>Your Name</Link>
-            </li>
-            <li>
-               <Link to={`/contacts/2`}>Your Friend</Link>
-            </li>
+            <NavWrapper>
+               <Item>
+                  <Link to={`/`}>Home</Link>
+               </Item>
+               <Item>
+                  <Link to={`/page2`}>Page 2</Link>
+               </Item>
+            </NavWrapper>
          </ul>
       </nav>
    );
