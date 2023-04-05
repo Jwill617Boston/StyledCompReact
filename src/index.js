@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import PracticePage from "./pages/PracticePage";
 
 import "./index.css";
+import NewPage from "./pages/NewPage";
 
 const router = createBrowserRouter([
    {
@@ -20,7 +21,10 @@ const router = createBrowserRouter([
             element: <HomePage />,
          },
          {
-            path: "practice_page",
+            path: "practice",
+            loader: () => {
+               return [{ first: "Jason", last: "Williams" }];
+            },
             element: <PracticePage />,
          },
       ],

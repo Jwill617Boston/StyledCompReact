@@ -11,7 +11,7 @@ const NavbarComp = () => {
                   <Link to={`/`}>Home</Link>
                </Item>
                <Item>
-                  <Link to={`/practice_Page`}>Pratice Page</Link>
+                  <Link to={`/practice`}>Practice Page</Link>
                </Item>
             </NavWrapper>
          </ul>

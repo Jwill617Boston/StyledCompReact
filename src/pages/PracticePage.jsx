@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import { Wrapper, Item } from "../components/sytled/Practice";
+import { useLoaderData } from "react-router-dom";
 
 const PracticePage = () => {
+   const user = useLoaderData();
    const [data, setData] = useState([]);
    const [name, setName] = useState("");
 
@@ -13,11 +15,11 @@ const PracticePage = () => {
       });
    };
 
+   console.log(user);
+
    const clearData = () => {
       setData([]);
    };
-
-   console.log("Data", data);
 
    return (
       <>
@@ -25,6 +27,10 @@ const PracticePage = () => {
             <button onClick={getData}>
                <h1>Click For Data</h1>
             </button>
+            <h1>
+               {user[0].first}
+               {user[0].last}
+            </h1>
             <label>
                Text input:
                <input value={name} onChange={(e) => setName(e.target.value)} />
